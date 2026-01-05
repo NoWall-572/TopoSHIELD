@@ -1,4 +1,3 @@
-```markdown
 # TopoSHIELD
 
 Code for our paper `TopoSHIELD: Reshaping the Flow of Malice via Spatio-Temporal Risk-Aware Topological Evolution in Multi-Agent Systems`.
