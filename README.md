@@ -107,15 +107,15 @@ TopoSHIELD builds a directed, attributed **spatio-temporal graph** from the exec
 The implementation is organized around a GSTNet backbone:
 
 $$
-H_i^t = \operatorname{GRU}(h_i^t, H_i^{t-1})
+H_i^t = \mathrm{GRU}(h_i^t, H_i^{t-1})
 $$
 
 $$
-\hat{y}_{i,\mathrm{NRE}}^t = \sigma\!\left(\operatorname{MLP}_{\mathrm{node}}(H_i^t)\right)
+\hat{y}_{i,\mathrm{NRE}}^t = \sigma\!\left(\mathrm{MLP}_{\mathrm{node}}(H_i^t)\right)
 $$
 
 $$
-\hat{y}_{ij,\mathrm{EAC}}^t = \sigma\!\left(\operatorname{MLP}_{\mathrm{edge}}\left([H_i^t \Vert H_j^t \Vert z_{ij}^t]\right)\right)
+\hat{y}_{ij,\mathrm{EAC}}^t = \sigma\!\left(\mathrm{MLP}_{\mathrm{edge}}\left([H_i^t \Vert H_j^t \Vert z_{ij}^t]\right)\right)
 $$
 
 Here, **NRE** is the node-level risk estimate and **EAC** is the edge-level propagation / affinity signal used to guide topology updates. The released implementation exposes the edge output as `eac_affinity` and prunes links below the configured affinity threshold.
